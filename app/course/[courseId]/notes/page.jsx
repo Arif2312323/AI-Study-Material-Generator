@@ -164,6 +164,7 @@ function ViewNotes() {
         courseId: courseId,
         studyType: "notes",
       });
+      console.log(result)
 
       // No need to parse notes as JSON if it's already HTML content.
       const parsedNotes = result?.data?.notes.map((note) => ({

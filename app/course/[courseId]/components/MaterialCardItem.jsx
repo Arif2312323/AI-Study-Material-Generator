@@ -38,13 +38,18 @@ const MaterialCardItem = ({ item, studyTypeContent, course, refreshData }) => {
         type: item.type,
         chapters: chapters,
       });
+      console.log(result)
 
       refreshData(true);
-      toast("Content generation started. Pls refresh after some time.");
+      toast(`✅ ${item.name} generation started. Refresh after some time.`);
     } catch (error) {
-      console.error("Generation error:", error);
+      console.error(`Error details:`, {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status,
+      });
       toast(
-        "Error generating content: " +
+        `Error generating ${item.name}: ` +
           (error.response?.data?.message || error.message)
       );
     } finally {

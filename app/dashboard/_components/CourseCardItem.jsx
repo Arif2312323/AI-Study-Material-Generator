@@ -27,7 +27,7 @@ function CourseCardItem({ course }) {
         </div>
 
         <div className="mt-6 flex justify-end items-baseline">
-          {course?.status == "Generating" ? (
+          {course?.status == "generating" ? (
             <Button disabled>Generating</Button>
           ) : (
             <Link href={"/course/" + course?.courseId}>

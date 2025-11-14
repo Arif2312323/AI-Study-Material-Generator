@@ -116,6 +116,7 @@ async function generateCourseAsync(
     const aiResp = await courseOutlineAIModel.sendMessage(PROMPT);
     const aiResult = JSON.parse(aiResp.response.text());
 
+    console.log(aiResult)
     console.log(`AI generation completed for course ${courseId}`);
 
     // Update status to indicate saving to database

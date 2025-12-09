@@ -5,8 +5,9 @@ import {
   GenerateNotes,
   GenerateStudyTypeContent,
   helloWorld,
+  ingestPDF,
 } from "@/inngest/functions";
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export const { GET, POST, PUT } = serve({
   client: inngest,
@@ -16,5 +17,6 @@ export const { GET, POST, PUT } = serve({
     CreateNewUser,
     GenerateNotes,
     GenerateStudyTypeContent,
+    ingestPDF,
   ],
 });

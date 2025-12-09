@@ -55,9 +55,9 @@ function SideBar() {
         </div>
       </div>
       <div className="border p-3 bg-slate-100 rounded-lg absolute bottom-10 w-[86%]">
-        <h2 className="text-lg mb-3">Available Credits : {5 - totalCourse}</h2>
-        <Progress value={(totalCourse / 5) * 100} />
-        <h2 className="text-xs mt-1">{totalCourse} Out of 5 Credits used</h2>
+        <h2 className="text-lg mb-3">Available Credits : {10 - totalCourse}</h2>
+        <Progress value={(totalCourse / 10) * 100} />
+        <h2 className="text-xs mt-1">{totalCourse} Out of 10 Credits used</h2>
         <Link href="/dashboard/upgrade" className="text-primary text-sm mt-2">
           Upgrade to create more
         </Link>

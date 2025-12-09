@@ -47,3 +47,20 @@ export const PAYMENT_RECORD_TABLE = pgTable("paymentRecord", {
   customerId: varchar(),
   sessionId: varchar(),
 });
+
+export const PDF_DOCUMENTS_TABLE = pgTable("pdfDocuments", {
+  id: serial().primaryKey(),
+  userId: varchar().notNull(),
+  fileName: varchar().notNull(),
+  content: text(),
+  summary: text(),
+  createdAt: varchar(),
+});
+
+export const PDF_CHUNKS_TABLE = pgTable("pdfChunks", {
+  id: serial().primaryKey(),
+  documentId: integer().notNull(),
+  chunkIndex: integer().notNull(),
+  content: text().notNull(),
+  embedding: json(), // Store embedding as JSON array
+});

@@ -2,7 +2,7 @@
 import { CourseCountContext } from "@/app/_context/CourseCountContext";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { LayoutDashboard, Shield, UserCircle } from "lucide-react";
+import { LayoutDashboard, Shield, UserCircle, Presentation } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -27,18 +27,24 @@ function SideBar() {
     },
   ];
 
-  const { totalCourse, setTotlaCourse } = useContext(CourseCountContext);
+  const { totalCourse, setTotalCourse } = useContext(CourseCountContext);
   const path = usePathname();
   return (
     <div className="h-screen shadow-md p-5">
       <div className="flex gap-2 items-center">
         <Image src={"/logo.svg"} alt="logo" width={40} height={40} />
-        <h2 className="font-bold text-2xl">StudyGenie </h2>
+        <h2 className="font-bold text-2xl">Unnamed FYP</h2>
       </div>
 
       <div className="mt-10">
         <Link href={"/create"} className="w-full">
           <Button className="w-full">+&nbsp;Create New</Button>
+        </Link>
+        <Link href={"/dashboard/create-presentation"} className="w-full mt-2 block">
+          <Button variant="outline" className="w-full">
+            <Presentation className="w-4 h-4 mr-2" />
+            Create Presentation
+          </Button>
         </Link>
         <div className="mt-5">
           {MenuList.map((menu, index) => (
@@ -55,9 +61,9 @@ function SideBar() {
         </div>
       </div>
       <div className="border p-3 bg-slate-100 rounded-lg absolute bottom-10 w-[86%]">
-        <h2 className="text-lg mb-3">Available Credits : {5 - totalCourse}</h2>
-        <Progress value={(totalCourse / 5) * 100} />
-        <h2 className="text-xs mt-1">{totalCourse} Out of 5 Credits used</h2>
+        <h2 className="text-lg mb-3">Available Credits : {10 - totalCourse}</h2>
+        <Progress value={(totalCourse / 10) * 100} />
+        <h2 className="text-xs mt-1">{totalCourse} Out of 10 Credits used</h2>
         <Link href="/dashboard/upgrade" className="text-primary text-sm mt-2">
           Upgrade to create more
         </Link>

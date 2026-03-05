@@ -20,7 +20,7 @@ function SelectOption({ selectedStudyType }) {
       icon: "/code.png",
     },
     {
-      name: "Other",
+      name: "Upload Notes",
       icon: "/knowledge.png",
     },
   ];

@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import Link from "next/link";
 
 function CreateCourse() {
   const [step, setStep] = useState(0);
@@ -73,7 +74,13 @@ function CreateCourse() {
           "-"
         )}
         {step == 0 ? (
-          <Button onClick={() => setStep(1)}>Next</Button>
+          formData.courseType && formData.courseType == "Upload Notes" ? (
+            <Link href="/rag">
+              <Button>Next</Button>
+            </Link>
+          ) : (
+            <Button onClick={() => setStep(1)}>Next</Button>
+          )
         ) : (
           <Button onClick={GenerateCourseOutline}>Generate</Button>
         )}

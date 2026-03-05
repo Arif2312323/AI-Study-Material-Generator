@@ -21,7 +21,6 @@ const LandingPage = () => {
         </div>
       </nav>
 
-
       {/* Main Content */}
       <main className="flex-grow container mx-auto px-4 mt-8 md:mt-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
@@ -47,10 +46,10 @@ const LandingPage = () => {
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
                 <div className="flex flex-wrap justify-center whitespace-normal md:whitespace-nowrap">
                   <span className="text-black">AI-Powered </span>
-                  <span className="text-blue-600">Exam Prep</span>
+                  <span className="text-blue-600">Pedagogy</span>
                 </div>
                 <div className="mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-                  Material Generator
+                  Platform
                 </div>
               </h1>
               <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-xl px-4">

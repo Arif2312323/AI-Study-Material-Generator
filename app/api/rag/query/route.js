@@ -103,9 +103,10 @@ Instructions:
     });
 
     // Handle both property and function access patterns
-    const answer = typeof response.text === 'function' 
-      ? response.text() 
-      : (response.text || "I couldn't generate an answer. Please try again.");
+    const answer =
+      typeof response.text === "function"
+        ? response.text()
+        : response.text || "I couldn't generate an answer. Please try again.";
 
     return NextResponse.json({
       success: true,
@@ -120,4 +121,3 @@ Instructions:
     );
   }
 }
-

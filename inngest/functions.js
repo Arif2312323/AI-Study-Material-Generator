@@ -283,26 +283,26 @@ function stripNonAscii(text) {
 function chunkText(text, chunkSize = 1200, overlap = 200) {
   const chunks = [];
   let start = 0;
-  
+
   while (start < text.length) {
     let end = start + chunkSize;
-    
+
     // Try to break at sentence boundaries
     if (end < text.length) {
-      const lastPeriod = text.lastIndexOf('.', end);
-      const lastNewline = text.lastIndexOf('\n', end);
+      const lastPeriod = text.lastIndexOf(".", end);
+      const lastNewline = text.lastIndexOf("\n", end);
       const breakPoint = Math.max(lastPeriod, lastNewline);
-      
+
       if (breakPoint > start + chunkSize * 0.5) {
         end = breakPoint + 1;
       }
     }
-    
+
     chunks.push(text.slice(start, end).trim());
     start = end - overlap;
   }
-  
-  return chunks.filter(chunk => chunk.length > 0);
+
+  return chunks.filter((chunk) => chunk.length > 0);
 }
 
 export const ingestPDF = inngest.createFunction(
@@ -400,7 +400,9 @@ ${limitedText}
         await db.insert(PDF_CHUNKS_TABLE).values(chunkRows);
       });
 
-      console.log(`✅ PDF processed: ${fileName}, ${chunks.length} chunks stored`);
+      console.log(
+        `✅ PDF processed: ${fileName}, ${chunks.length} chunks stored`
+      );
 
       return {
         status: "processed",
